@@ -1,7 +1,7 @@
 from socket import socket, AF_INET, SOCK_STREAM
 
 HOST = 'localhost'
-PORT = 51400
+PORT = 51401
 MAX_MESSAGE = 2048
 NUM_THREAD = 1
 

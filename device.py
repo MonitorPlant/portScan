@@ -1,7 +1,7 @@
 from socket import socket, AF_INET, SOCK_STREAM
 
 HOST = 'localhost'
-PORT = 51400
+PORT = 51401
 
 CHR_CAN = '\18'
 CHR_EOT = '\04'
@@ -31,4 +31,7 @@ def exit():
 def cancel():
     com_send( CHR_CAN )
 
-exit()
+while input() != 'exit':
+    com_send( 'message test' )
+
+#proc()
