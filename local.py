@@ -7,6 +7,9 @@ available_port = []
 port = 49152
 
 def portAvailable( port ):
+    if port == 56130:
+        return -1
+
     sock = socket.socket( socket.AF_INET, socket.SOCK_STREAM )
     return_code = sock.connect_ex( ( target_host, port ) )
     sock.close()
