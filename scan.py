@@ -8,6 +8,8 @@ NUM_THREAD = 1
 CHR_CAN = '\18'
 CHR_EOT = '\04'
 
+device_name = []
+
 def com_receiver():
 
     sock = socket( AF_INET, SOCK_STREAM )
@@ -16,22 +18,21 @@ def com_receiver():
     print( 'receiver ready, NUM_THREAD = ' + str( NUM_THREAD ) )
 
     while True:
-        try:
-            conn, addr = sock.accept()
-            mess       = conn.recv( MAX_MESSAGE ).decode( 'utf-8' )
-            conn.close()
+#        try:
+        conn, addr = sock.accept()
+        mess       = conn.recv( MAX_MESSAGE ).decode( 'utf-8' )
+        conn.close()
 
-            if( mess == CHR_EOT ):
-                break
+        if( mess == CHR_EOT ):
+            break
 
-            if( mess == CHR_CHAN ):
-                print( 'cancel' )
-                continue
+        if( mess == CHR_CHAN ):
+            print( 'cancel' )
+            continue
 
-            print( 'message:' + mess )
-
-        except:
-            print( 'Error:' + mess )
+        print( 'message:' + mess )
+#        except:
+#            print( 'Error:' + mess )
 
     sock.close()
     print( 'end of receiver' )

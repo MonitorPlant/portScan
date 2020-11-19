@@ -34,4 +34,4 @@ def cancel():
 while input() != 'exit':
     com_send( 'message test' )
 
-#proc()
+exit()
