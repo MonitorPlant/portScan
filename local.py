@@ -22,5 +22,5 @@ while len(available_port) < 127 and port < 65535:
 
     port = port + 1
 
-print( "Complate!" )
+#print( "Complate!" )
 print( available_port )

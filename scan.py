@@ -1,7 +1,7 @@
 from socket import socket, AF_INET, SOCK_STREAM
 
-HOST = 'localhost'
-PORT = 51401
+host = 'localhost'
+MASTER_PORT = 51401
 MAX_MESSAGE = 2048
 NUM_THREAD = 1
 
@@ -9,6 +9,14 @@ CHR_CAN = '\18'
 CHR_EOT = '\04'
 
 device_name = []
+
+def portAvailable( port ):
+    if port == 56130:
+        return -1
+
+    test_sock = socket( AF_INET, SOCK_STREAM )
+    return_code = sock.connect_ex( ( host, current_port ) )
+
 
 def com_receiver():
 
