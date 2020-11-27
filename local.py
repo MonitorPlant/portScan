@@ -4,7 +4,8 @@ target_host = 'localhost'
 
 available_port = []
 
-port = 49152
+port = 64315
+#port = 49152
 
 def portAvailable( port ):
     if port == 56130:

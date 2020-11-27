@@ -1,9 +1,8 @@
 from socket import socket, AF_INET, SOCK_STREAM
 
 HOST = 'localhost'
-PORT = 51401
+MASTER_PORT = 50001
 
-CHR_CAN = '\18'
 CHR_EOT = '\04'
 
 def com_send( mess ):
@@ -24,12 +23,6 @@ def com_send( mess ):
 
 def proc():
     com_send( 'message test' )
-
-def exit():
-    com_send( CHR_EOT )
-
-def cancel():
-    com_send( CHR_CAN )
 
 while input() != 'exit':
     com_send( 'message test' )
